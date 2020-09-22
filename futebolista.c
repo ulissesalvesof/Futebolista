@@ -1,8 +1,8 @@
 #include <stdio.h>
-typedef struct Jogador{
+typedef struct jogador{
     int id;
     char nome[20];
-    char timee[20];
+    char equipe[20];
     int camisa;
     char pe[20];
     char posição[20];
@@ -10,3 +10,9 @@ typedef struct Jogador{
     int idade;
     int gols;
 }Jogador;
+
+typedef struct equipe{
+	int id;
+	char nome[50],tecnico[50],estadio[50],regiao[50];
+	Jogador player;
+}Equipe;
