@@ -1,0 +1,46 @@
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct jogador{
+    int id;
+    char nome[100];
+    char equipe[100];
+    int camisa;
+    char pe[100];
+    char posicao[100];
+    float salario;
+    int idade;
+    int gols;
+}Jogador;
+int main(){
+    Jogador *vet = (Jogador*) malloc(sizeof(Jogador));
+    int i=0;
+    int aux=0;
+    do{
+         printf("digite os dados do jogador");
+         scanf(" %[^\n]",vet[i].nome);
+         scanf(" %[^\n]",vet[i].equipe);
+         scanf("%d",&vet[i].camisa);
+         scanf(" %[^\n]",vet[i].pe);
+         scanf(" %[^\n]",vet[i].posicao);
+         scanf("%f",&vet[i].salario);
+         scanf("%d",&vet[i].idade);
+         scanf("%d",&vet[i].gols);
+
+         printf("Deseja cadastrar outros jogadores? 1-sim ou 0-não");
+         scanf("%d", &aux);
+
+         if(aux!=0){
+             i=i+1;
+             vet = (Jogador*) realloc(vet, (i+1)*sizeof(Jogador));
+         }
+
+    }while(aux!=0);
+    printf("digite o id do jogador que vc desejar ver");
+    int id;
+    scanf("%d", &id);
+    printf("%s", vet[id].nome);
+    printf("%s", vet[id].equipe);
+
+    free(vet);
+    return 0;
+}
