@@ -10,7 +10,7 @@ typedef struct jogador{
     int idade;
     int gols;
 }Jogador;
-
+//soma de
 typedef struct equipe{
 	int id;
 	char nome[50],tecnico[50],estadio[50],regiao[50];
